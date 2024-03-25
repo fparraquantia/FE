@@ -31,7 +31,7 @@ import { useGetSites } from "../../../app/hooks/useSites";
 const sites = [
   {
     id: 1,
-    name: "Planta Desaladora X432",
+    name: "Planta Potabilizadora de Gamboa",
     address: "2620 Ellington Rd, Quincy, IL",
     region: "AMERICA",
     subRegion: "North",
@@ -49,7 +49,7 @@ const sites = [
   },
   {
     id: 2,
-    name: "Proyecto PROVISUR",
+    name: "Planta Desaladora Mina Spence",
     address: "9 Chem. de Bretagne, 92130 Issy-les-Moulineaux",
     region: "EMEA",
     subRegion: "South",
@@ -103,7 +103,7 @@ const sites = [
   },
   {
     id: 5,
-    name: "Planta Desaladora para la Mina Spence",
+    name: "Planta Desaladora de Duqm",
     address: "9M4X+PR7, Asabri, Nogosari, Kec. Pandaan, Pasuruan",
     region: "ASEAN",
     subRegion: "--",
