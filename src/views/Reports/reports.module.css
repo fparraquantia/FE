@@ -1,0 +1,7 @@
+.editorjs {
+  width: 100%;
+  overflow: auto;
+  border: 1px dotted black;
+  page-break-after: always;
+  border: 1px dotted black;
+}

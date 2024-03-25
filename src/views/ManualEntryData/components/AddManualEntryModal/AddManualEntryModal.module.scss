@@ -1,0 +1,17 @@
+.addParameter {
+  width: 650px;
+  height: 365px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &Container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 455px;
+    margin: 45px 0 45px 0;
+    justify-content: center;
+  }
+}

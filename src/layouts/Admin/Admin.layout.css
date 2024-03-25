@@ -1,0 +1,19 @@
+.admin-layout {
+  flex-grow: 1;
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 100%;
+}
+
+.admin-layout-header {
+  min-width: 100%;
+  border-radius: 10%;
+  color: white;
+  background-color: white;
+}
+
+.admin-layout-background {
+  height: 92%;
+  width: 100%;
+  background-color: #F7FAFD;
+}

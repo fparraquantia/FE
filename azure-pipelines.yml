@@ -1,0 +1,116 @@
+trigger:
+  - '*'
+pool:
+  vmImage: 'ubuntu-latest'
+  
+stages:
+  - stage: bump
+    displayName: Bump Version
+    variables:
+    - group: ci-frontend
+    jobs:
+    - job: config
+      variables:
+        - name: bumpArg
+          ${{ if eq(variables['Build.SourceBranchName'], 'main') }}:
+            value: "minor"
+          ${{ elseif eq(variables['Build.SourceBranchName'], 'release-rc*') }}:
+            value: "patch"
+          ${{ elseif eq(variables['Build.SourceBranchName'], 'release/*') }}:
+            value: "major"
+          ${{ else }}:
+            value: "prerelease --preid=$(build.sourceBranchName)"
+      steps:
+        - checkout: self
+          persistCredentials: true
+        - script: git config --global user.email "$(CI_EMAIL)" && git config --global user.name "$(CI_USERNAME)" 
+          displayName: Git Config
+        - script: npm version $(bumpArg) -m "Bump version %s [skip ci]"
+          displayName: Bump Version
+          condition: ne(variables.bumpArg, '"skip"')
+        - bash: echo "##vso[task.setvariable variable=VERSION;;isOutput=true]$(jq .version package.json)"
+          name: get_version
+          displayName: Get Version
+        - script: |
+            git push origin HEAD:$(build.sourceBranchName)
+            git tag $(get_version.VERSION) -m "Bump version"
+            git push origin $(get_version.VERSION)
+          displayName: Push and Tag
+  
+  - stage: build
+    dependsOn: [ bump ]
+    jobs:
+      - job: build_and_push
+        steps:
+          - task: Npm@1
+            displayName: 'Install Dependencies'
+            inputs:
+              command: custom
+              verbose: false
+              customCommand: 'install --force'
+
+          - task: Npm@1
+            env:
+              NODE_OPTIONS: --max_old_space_size=16384
+            displayName: 'Build Npm'
+            inputs:
+              command: custom
+              verbose: false
+              customCommand: 'run build'
+
+          - task: PublishBuildArtifacts@1
+            displayName: 'Publish Build Artifacts'
+            inputs:
+              pathtoPublish: 'build'
+              artifactName: build
+
+  
+  - stage: quality
+    dependsOn: [ build ]
+    jobs:
+      - job: linting
+        steps:
+        - script: echo "make lint" # make lint
+          displayName: linting  
+      - job: testing
+        steps:
+        - script: echo "make test" # make test
+          displayName: testing
+  
+  - stage: deploy
+    dependsOn: [ bump, quality, build ]
+    jobs:
+      - deployment: frontend
+        variables:
+        - group: ci-frontend
+        - name: AZ_DEPLOY_TOKEN
+          ${{ if eq(variables['Build.SourceBranchName'], 'main') }}:
+            value: $(AZ_PLY_DEPLOY_TOKEN) # at the moment all deploys to ply
+          ${{ elseif eq(variables['Build.SourceBranchName'], 'release-rc*') }}:
+            value: $(AZ_STA_DEPLOY_TOKEN)
+          ${{ elseif eq(variables['Build.SourceBranchName'], 'release/*') }}:
+            value: $(AZ_PRO_DEPLOY_TOKEN)
+          ${{ else }}:
+            value: $(AZ_PLY_DEPLOY_TOKEN)
+        environment: 'playground' # at the moment all deploys to ply
+        strategy:
+          runOnce:
+            deploy:
+              steps:
+              - task: DownloadBuildArtifacts@0
+                inputs:
+                  artifactName: build
+                  downloadPath: $(Pipeline.Workspace)
+
+              - task: AzureStaticWebApp@0
+                displayName: 'Deploy Static Web App'
+                inputs:
+                  azure_static_web_apps_api_token: $(AZ_DEPLOY_TOKEN)
+                  skip_app_build: true
+                  skip_api_build: true
+                  app_location: "/build" # App source code path
+                  api_location: "" # Api source code path - optional
+                  workingDirectory: $(Pipeline.Workspace)
+                env:
+                  AZ_DEPLOY_TOKEN: $(AZ_DEPLOY_TOKEN)
+              

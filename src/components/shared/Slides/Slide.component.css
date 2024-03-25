@@ -1,0 +1,48 @@
+.slide-landing-container {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.slide-custom-background {
+    min-width: 100%;
+    min-height: 100%;
+}
+
+.slide-benefits-container {
+    background-color: #F2E7DC;
+    color: #990241;
+}
+
+.slide-successCases-container {
+    background-color: #A9D9D0;
+    color: #0B3C65;
+}
+
+.slide-participants-container {
+    background-color: #012A2D;
+    color: white;
+}
+
+.slide-contacts-container {
+    display: flex;
+    height: calc(100%);
+    padding: 0;
+}
+
+.slide-inner-container {
+    padding-top: 5%;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    padding-bottom: 5%;
+    width: 95%;
+}
+
+.slide-infotainer {
+    padding: 5%;
+}
+
+.slide-title {
+    font-size: 4.3vh;
+    line-height: 5.22vh;
+    font-weight: bold;
+}

@@ -1,0 +1,73 @@
+.inputContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex: 1;
+
+  &Label {
+    display: flex;
+    width: 170px;
+    height: 35px;
+    font-size: 19px;
+    line-height: 21.85px;
+    letter-spacing: 0.4px;
+
+    align-items: center;
+    p {
+      margin: 0;
+    }
+
+    &Normal {
+      color: #b3b3b3;
+      font-weight: 400;
+    }
+
+    &Title {
+      color: #4d4d4d;
+      font-weight: 700;
+    }
+
+    &Left {
+      justify-content: flex-start;
+    }
+
+    &Center {
+      justify-content: center;
+    }
+
+    &Right {
+      justify-content: flex-end;
+    }
+  }
+
+  &Input {
+    border: none;
+    box-shadow: none;
+    outline: none;
+    text-align: left;
+    position: relative;
+    border-radius: 8px;
+    flex: 1;
+    height: 35px;
+    text-align: center;
+    padding: 0 15px 0 15px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 18.4px;
+    letter-spacing: 0.4px;
+    color: #4d4d4d;
+
+    &Primary {
+      background-color: #b0d1ee;
+    }
+
+    &Secondary {
+      background-color: #f7fafd;
+    }
+
+    &Grey {
+      background-color: #e6e6e6;
+    }
+  }
+}

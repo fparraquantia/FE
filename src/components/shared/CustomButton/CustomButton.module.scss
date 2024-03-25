@@ -1,0 +1,42 @@
+.button {
+  transition: opacity 0.15s ease;
+  cursor: pointer;
+  height: 40px;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  &Primary {
+    &Disabled {
+      background-color: #e6e6e6;
+    }
+
+    &Enabled {
+      background-color: #0069c8;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  &Secondary {
+    &Disabled {
+      background-color: #b3b3b3;
+      opacity: 0.5;
+    }
+
+    &Enabled {
+      background-color: #b3b3b3;
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
+
+  span {
+    font-weight: 400;
+    font-size: 18px;
+    color: #ffffff;
+  }
+}

@@ -1,0 +1,6 @@
+{
+    "ignore_ci": true,
+    "language": "node",
+    "service": "static_web_app",
+    "service_type": "frontend"
+}
