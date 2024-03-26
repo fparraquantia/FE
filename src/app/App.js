@@ -1,4 +1,6 @@
 // WEB VITALS
+import React from 'react';
+
 import reportWebVitals from "./reportWebVitals";
 
 // React-Query

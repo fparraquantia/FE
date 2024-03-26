@@ -1,3 +1,5 @@
+import React from "react";
+
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {
@@ -493,7 +495,9 @@ const sites = [
 
 const Sites = () => {
   const { id } = useParams();
-  const { data: dataSiteFromDB, isLoading, isError } = useGetSite(id);
+  const { data: dataSiteFromDB } = useState(false)
+  const isLoading = false
+  const isError = false
   const [selectedSite, setSelectedSite] = useState({});
 
   useEffect(() => {

@@ -5,6 +5,7 @@ import React, {
   useRef,
   useState,
 } from "react";
+
 import styles from "./NewApplication.module.scss";
 import CustomSelect from "../../../../../components/shared/CustomSelect/CustomSelect";
 import { FiPlus } from "react-icons/fi";
@@ -155,7 +156,6 @@ export default function NewApplication({
       }));
       setApplicationProducts({});
       setSelectedApplication(-1);
-      selectRef?.current?.clean();
     }
   }, [applicationProducts, createSiteData?.applications]);
 

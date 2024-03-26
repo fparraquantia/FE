@@ -46,16 +46,18 @@
     "react-pro-sidebar": "^1.1.0-alpha.1",
     "react-redux": "8.0.5",
     "react-router-dom": "6.8.1",
-    "react-scripts": "^3.0.1",
+    "react-scripts": "5.0.1",
     "react-select": "5.7.2",
-    "react-ui-cards": "^2.0.0",
+    "react-ui-cards": "^3.1.0",
     "reactflow": "^11.10.1",
     "rxjs": "7.8.0",
     "styled-components": "^6.0.8",
-    "web-vitals": "2.1.4"
+    "web-vitals": "2.1.4",
+    "webpack": "5.89.0"
   },
   "scripts": {
-    "start": "react-scripts start --openssl-legacy-provider",    "build": "react-scripts build",
+    "start": "react-scripts --openssl-legacy-provider start" ,
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

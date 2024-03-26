@@ -1,10 +1,11 @@
+import React from "react";
+
 import { useState } from 'react';
 
 import { Navigate, useLinkClickHandler } from 'react-router-dom';
 
 import { Checkbox, Divider, FormControlLabel, Grid, Link, TextField, Typography } from '@mui/material';
 
-import { useCookies } from 'react-cookie';
 
 import routesConfig from '../../config/routes.config';
 import landingTranslations from '../../constants/translations/landing.translations';
@@ -21,7 +22,6 @@ function LoginContainer(props) {
   const translate = props.translate;
   const forgotPassword = props.forgotPassword;
 
-  const [cookies, setCookie] = useCookies(['session']);
 
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
@@ -32,7 +32,6 @@ function LoginContainer(props) {
 
   const onLoginClick = (e) => {
     if (username === USERNAME && password === PASSWORD) {
-      setCookie('session', 'aaaaaaa', {sameSite: 'strict', maxAge: rememberMe ? 2592000 : 28800});
       redirectToMap(e);
       return;
     }
@@ -151,10 +150,8 @@ export default function Landing(props) {
   const translate = props.translator;
   const login = props.login;
   const ComponentToRender = LoginContainer;
-  const [cookies, setCookie] = useCookies(['session']);
 
   if (login) {
-    setCookie('session', 'aaaaaaa', {sameSite: 'strict', maxAge: 2592000 });
     return <Navigate to={routesConfig.Map} />;
   }
 

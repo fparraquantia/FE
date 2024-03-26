@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { useEffect, useState } from 'react';
 import ConnectedModal from './ConnectedModal';
 import styles from './modulesandsensors.module.css'

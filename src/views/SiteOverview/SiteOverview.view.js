@@ -1,3 +1,5 @@
+import React from "react";
+
 import { useState, useEffect } from "react";
 import styles from "./SiteOverview.view.css";
 import { MdOutlineClose } from "react-icons/md";

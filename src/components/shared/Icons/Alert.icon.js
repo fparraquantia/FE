@@ -1,4 +1,5 @@
 import SvgIcon from '@mui/material/SvgIcon';
+import React from 'react';
 
 const DEFAULT_COLOR = '#FF0000';
 const DEFAULT_POSITION = 'absolute';
