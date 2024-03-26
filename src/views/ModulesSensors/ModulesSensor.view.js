@@ -18,48 +18,48 @@ const mockModules = [
   {
     id: 'KC012345678',
     status: 'disconnect',
-    name: 'Kurita Controller',
-    brand: 'Kurita BX',
+    name: 'Tedagua Controller 12',
+    brand: 'Tedagua BX',
     model: 'M102',
     date: '23/02/2024',
     communication: 'GPRS'
   }, {
     id: 'KC450096322',
     status: 'disconnect',
-    name: 'Kurita Controller',
-    brand: 'Kurita BX',
+    name: 'Tedagua Controller 1',
+    brand: 'Tedagua BX',
     model: 'M102',
     date: '23/02/2024',
     communication: 'GPRS'
   }, {
     id: 'KC636335728',
     status: 'disconnect',
-    name: 'Kurita Controller',
-    brand: 'Kurita BX',
+    name: 'Tedagua Controller 543',
+    brand: 'Tedagua BX',
     model: 'M102',
     date: '23/02/2024',
     communication: 'GPRS'
   }, {
     id: 'KC432152424',
     status: 'disconnect',
-    name: 'Kurita Controller',
-    brand: 'Kurita BX',
+    name: 'Tedagua Controller 43',
+    brand: 'Tedagua BX',
     model: 'M102',
     date: '23/02/2024',
     communication: 'GPRS'
   }, {
     id: 'KC527567458',
     status: 'disconnect',
-    name: 'Kurita Controller',
-    brand: 'Kurita BX',
+    name: 'Tedagua Controller 14',
+    brand: 'Tedagua BX',
     model: 'M102',
     date: '23/02/2024',
     communication: 'GPRS'
   }, {
     id: 'KC178019531',
     status: 'disconnect',
-    name: 'Kurita Controller',
-    brand: 'Kurita BX',
+    name: 'Tedagua Controller 39',
+    brand: 'Tedagua BX',
     model: 'M102',
     date: '23/02/2024',
     communication: 'GPRS'
@@ -148,13 +148,14 @@ function ModulesSensors() {
             <span className={styles.blueDot}></span><p>CONNECTED MODULES</p>
             <FiPlus className={styles.titleIcon} onClick={() => setView('connect')} />
           </div>
-          {modules?.map((module, index) => (
+          {mockModules?.map((module, index) => (
             <div key={index} className={styles.listModule} onClick={() => showSensors(module)}
               style={{ backgroundColor: currentModule && currentModule.id === module.id ? '#0069C8' : '' }}
             >
               <img src={sensorImg} width='40px' height='43px' />
               <div>
-                <p>{module.device}</p>
+                <p>{module.model}</p>
+
                 <p style={{ color: currentModule.id === module.id ? '#ffffff' : '' }}>{module.name}</p>
               </div>
             </div>
