@@ -16,7 +16,7 @@ import './Landing.view.css';
 import Hider from '../../components/shared/Hider/Hider.component';
 
 const USERNAME = 'rubiobotia';
-const PASSWORD = 'rFdvun6w[!cypK*';
+const PASSWORD = 'gi';
 
 function LoginContainer(props) {
   const translate = props.translate;
