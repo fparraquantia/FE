@@ -369,8 +369,8 @@ export const CardTop = ({ selectedSite, selectedTitle }) => {
           >
             {site.id === 1 && (
               <img
-                src={Kuritaamerica}
-                alt="Kurita_america"
+                src={site2}
+                alt="TDA"
                 width={"100%"}
                 style={{
                   borderRadius: "10px",
@@ -381,7 +381,7 @@ export const CardTop = ({ selectedSite, selectedTitle }) => {
             {site.id === 2 && (
               <img
                 src={site2}
-                alt="Kurita_america"
+                alt="TDA"
                 width={"100%"}
                 style={{
                   borderRadius: "10px",
@@ -390,7 +390,10 @@ export const CardTop = ({ selectedSite, selectedTitle }) => {
               />
             )}
             {site.id >= 3 && (
-              <img src={site3} alt="Kurita_america" width={"100%"} />
+              <img src={site2} alt="TDA" width={"100%"}   style={{
+                borderRadius: "10px",
+                border: "2px solid #ffffff",
+              }} />
             )}
           </Box>
         </Box>

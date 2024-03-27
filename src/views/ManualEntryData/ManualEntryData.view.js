@@ -242,7 +242,7 @@ export default function ManualEntryData(props) {
     var data = new FormData();
     data.append("manualEntryFile", selectedFile);
     fetch(
-      `https://backend---prod.nicepebble-288f7616.westeurope.azurecontainerapps.io/manualEntry/ExcelFile/${id}`,
+      
       {
         method: "POST",
         body: data,

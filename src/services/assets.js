@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const BASE_URL =
-  "https://backend---prod.nicepebble-288f7616.westeurope.azurecontainerapps.io";
+
 
 //1-Existing assets
 export const getAssets = async () => {

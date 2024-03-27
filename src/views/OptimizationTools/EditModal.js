@@ -110,8 +110,8 @@ const EditModal = ({ setView, currentModule, currentAsset, setCurrentModule, set
                     <div>
                         <p>Brand</p>
                         <select value={editedModule.brand} onChange={(e) => handleChangeModule('brand', e.target.value)}>
-                            <option value="Kurita DX">Kurita DX</option>
-                            <option value="Kurita ZX">Kurita ZX</option>
+                            <option value="Kurita DX">Td DX</option>
+                            <option value="Kurita ZX">Td ZX</option>
                             <option value="Microcom">Microcom</option>
                         </select>
                     </div>

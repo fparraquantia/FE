@@ -60,7 +60,7 @@ export const sitesData = [
     siteBackground: null,
     typeBackground: null,
     colorBackground: null,
-    kuritaOfficer: "Dylan Poulin",
+    kuritaOfficer: "Fernando Parra",
     officerTelephone: null,
     officerMail: null,
     kuritaCustomer: null,

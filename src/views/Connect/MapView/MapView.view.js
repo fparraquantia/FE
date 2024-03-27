@@ -63,7 +63,7 @@ const sites = [
       latitude: 48.823816,
       longitude: 2.257877,
     },
-    contactName: "Dylan Poulin",
+    contactName: "Fernando Parra",
     customerName: "random name",
     weatherStation: "",
   },

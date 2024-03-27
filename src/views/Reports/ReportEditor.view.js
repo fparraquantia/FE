@@ -231,14 +231,14 @@ const ReportEditor = () => {
                                                 <div style={{ margin: '0 1rem' }}>
                                                     <div>Port + 33 (0)6 82 55 23 64</div>
                                                     <div>Tel.: + 33 (0)5 56 84 34 09</div>
-                                                    <div style={{ textDecoration: 'underline', fontWeight: '700', fontSize: '10px', color: '#0069C8' }}>laurent.kubiak@kurita-water.com</div>
+                                                    <div style={{ textDecoration: 'underline', fontWeight: '700', fontSize: '10px', color: '#0069C8' }}>laurent.kubiak@-water.com</div>
                                                 </div>
                                                 <div style={{ margin: '0 1rem' }}>
                                                     <div style={{ fontWeight: '700', fontSize: '10px' }}>Kurita France SAS</div>
                                                     <div>Route du Bec</div>
                                                     <div>33810 Ambes</div>
                                                     <div>France</div>
-                                                    <div style={{ textDecoration: 'underline', fontWeight: '700', fontSize: '10px', color: '#0069C8' }}>www.kurita.eu</div>
+                                                    <div style={{ textDecoration: 'underline', fontWeight: '700', fontSize: '10px', color: '#0069C8' }}>www.tedagua.com</div>
                                                 </div>
 
                                             </div>
@@ -295,14 +295,14 @@ const ReportEditor = () => {
                                                 <div style={{ margin: '0 1rem' }}>
                                                     <div>Port + 33 (0)6 82 55 23 64</div>
                                                     <div>Tel.: + 33 (0)5 56 84 34 09</div>
-                                                    <div style={{ textDecoration: 'underline', fontWeight: '700', fontSize: '10px', color: '#0069C8' }}>laurent.kubiak@kurita-water.com</div>
+                                                    <div style={{ textDecoration: 'underline', fontWeight: '700', fontSize: '10px', color: '#0069C8' }}></div>
                                                 </div>
                                                 <div style={{ margin: '0 1rem' }}>
                                                     <div style={{ fontWeight: '700', fontSize: '10px' }}>Kurita France SAS</div>
                                                     <div>Route du Bec</div>
                                                     <div>33810 Ambes</div>
                                                     <div>France</div>
-                                                    <div style={{ textDecoration: 'underline', fontWeight: '700', fontSize: '10px', color: '#0069C8' }}>www.kurita.eu</div>
+                                                    <div style={{ textDecoration: 'underline', fontWeight: '700', fontSize: '10px', color: '#0069C8' }}>www.tedagua.com</div>
                                                 </div>
 
                                             </div>

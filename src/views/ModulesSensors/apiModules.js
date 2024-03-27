@@ -1,7 +1,5 @@
 import axios from "axios";
 
-const BASE_URL =
-    'https://backend---prod.nicepebble-288f7616.westeurope.azurecontainerapps.io';
 
 //1-Connect Module to a site
 export const connectModule = async (moduleId, siteId) => {

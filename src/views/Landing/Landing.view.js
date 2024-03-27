@@ -15,8 +15,8 @@ import Button from '../../components/shared/Buttons/Button.component';
 import './Landing.view.css';
 import Hider from '../../components/shared/Hider/Hider.component';
 
-const USERNAME = 'rubiobotia';
-const PASSWORD = 'gi';
+const USERNAME = 'arubio';
+const PASSWORD = 'Arubio_2024_ted';
 
 function LoginContainer(props) {
   const translate = props.translate;

@@ -99,14 +99,7 @@ export default function Header(props) {
 }}
       > 
         
-        <Grid item>
-          <img
-            className="profile-user"
-            src="/images/Kurita Connect 360 - Avatar-Girl.png"
-            alt="kurita-profile-user"
-            style={{ height: "90%", width: "auto"}}
-          />
-        </Grid>
+  
       </Grid>
     </Grid>
   );
