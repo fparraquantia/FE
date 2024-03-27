@@ -57,7 +57,6 @@ export default function Header(props) {
 
       <Grid item>
         <Button
-          onClick={useLinkClickHandler(ROUTES.ConfigurationPath)}
           width="100%" height="100%" color="#B3B3B3">
           <SettingsOutlined />
           Settings
@@ -66,7 +65,6 @@ export default function Header(props) {
 
       <Grid item>
         <Button
-          onClick={useLinkClickHandler(ROUTES.Reports)}
           width="100%" height="100%" color="#B3B3B3">
           <AssessmentOutlined />
           Reports
