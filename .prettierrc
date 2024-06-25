@@ -1,0 +1,17 @@
+{
+  "arrowParens": "always",
+  "bracketSameLine": true,
+  "bracketSpacing": true,
+  "endOfLine": "lf",
+  "importOrder": ["^@/core/(.*)$", "^@/pages/(.*)$", "^@/features/(.*)$", "^@/components/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "jsxSingleQuote": false,
+  "plugins": ["@trivago/prettier-plugin-sort-imports"],
+  "printWidth": 140,
+  "semi": true,
+  "singleAttributePerLine": true,
+  "singleQuote": false,
+  "tabWidth": 2,
+  "trailingComma": "all",
+  "useTabs": false
+}

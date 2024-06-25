@@ -1,0 +1,88 @@
+@import "src/_styles/settings";
+
+.modalContainer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @include rem("min-height", 250px);
+  @include rem("min-width", 400px);
+  @include rem("border-radius", 8px);
+  @include rem("padding", 10px 30px 10px 30px);
+  max-width: 90%;
+  max-height: 95%;
+  background-color: $grey-1;
+  overflow-y: scroll;
+  box-shadow: 0px 4px 32px #0000001a;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+
+  &Header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    @include rem("border-bottom-width", 1px);
+    border-bottom-color: $grey-2;
+    border-bottom-style: solid;
+
+    &Title {
+      display: flex;
+      align-items: center;
+      flex-direction: row;
+      @include rem("height", 50px);
+      flex: 1;
+      font-weight: 700;
+      margin: 0;
+
+      &Add {
+        @include typography;
+        color: $grey-6;
+        text-transform: uppercase;
+      }
+      &Edit {
+        @include h4-regular;
+        color: $grey-4;
+      }
+
+      &Delete {
+        @include h4-bold;
+        color: $red-alert;
+      }
+    }
+  }
+
+  &Subtitle {
+    width: 100%;
+    @include typography;
+    font-weight: 400;
+    @include rem("padding", 10px 0);
+    color: $brand-4;
+    text-transform: uppercase;
+  }
+
+  &Body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    width: 100%;
+    min-height: 0;
+    overflow-y: scroll;
+  }
+
+  &Footer {
+    width: 100%;
+    align-items: center;
+    @include rem("border-top-width", 1px);
+    border-top-color: $grey-2;
+    border-top-style: solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    @include rem("gap", 100px);
+    @include rem("padding", 22px 0);
+  }
+}

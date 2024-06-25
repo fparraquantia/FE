@@ -1,0 +1,120 @@
+@import "src/_styles/settings";
+
+.container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  @include rem("gap", 25px);
+
+  &Delete {
+    @include h3-regular;
+    color: $grey-6;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include rem("height", 120px);
+    @include rem("gap", 5px);
+
+    span {
+      color: $red-alert;
+    }
+  }
+
+  &Grid {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+    @include rem("row-gap", 48px);
+    @include rem("column-gap", 32px);
+    &Card {
+      display: flex;
+      flex-direction: column;
+      @include rem("height", 225px);
+      @include rem("border-radius", 8px);
+      @include rem("padding", 20px);
+      @include boxShadow;
+      width: 100%;
+      @include respond-to(small) {
+        width: calc((100% / 2) - 1rem);
+      }
+      @include respond-to(large) {
+        width: calc((100% / 3) - (4rem / 3));
+      }
+
+      justify-content: space-between;
+      align-items: center;
+      background-color: $grey-1;
+
+      &Header {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+
+        span {
+          @include h4-bold;
+          color: $brand-4;
+          text-transform: none;
+          @include rem("padding", 5px);
+          @include ellipsis;
+        }
+
+        &Buttons {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+          @include rem("gap", 5px);
+        }
+      }
+
+      &Content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        &Data {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+
+          &Text {
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+            p {
+              @include h3-bold;
+              @include rem("font-size", 14px);
+              color: $grey-5;
+              @include rem("width", 120px);
+              @include ellipsis;
+            }
+
+            span {
+              @include h3-regular;
+              @include rem("font-size", 14px);
+              @include rem("width", 120px);
+              color: $grey-5;
+              @include ellipsis;
+            }
+          }
+        }
+        &Image {
+          @include rem("max-width", 160px);
+          @include rem("min-width", 80px);
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}

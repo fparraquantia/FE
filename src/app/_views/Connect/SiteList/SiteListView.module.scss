@@ -1,0 +1,57 @@
+@import "src/_styles/settings";
+
+.elementRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  @include rem("gap", 10px);
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
+
+  &Header {
+    @include rem("gap", 10px);
+    @include rem("width", 340px);
+    @include rem("padding", 10px 0px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    p {
+      @include typography;
+      color: $grey-6;
+    }
+  }
+
+  &EventLog {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  &Filter {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+
+    &Buttons {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      @include rem("gap", 5px);
+      @include rem("padding", 10px 0px);
+    }
+  }
+}

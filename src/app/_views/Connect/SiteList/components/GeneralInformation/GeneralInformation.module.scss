@@ -1,0 +1,58 @@
+@import "src/_styles/settings";
+
+.information {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  @include rem("width", 450px);
+  @include rem("padding-right", 30px);
+
+  &Input {
+    width: 100%;
+    @include rem("height", 58px);
+    justify-content: flex-start;
+    display: flex;
+  }
+
+  &Application {
+    @include rem("margin", 15px 0px);
+    justify-content: center;
+    align-items: center;
+
+    &Container {
+      @include rem("min-height", 50px);
+      @include rem("gap", 8px);
+      display: flex;
+      flex-direction: column;
+    }
+
+    &App {
+      @include rem("max-width", 220px);
+
+      &Selected {
+        background-color: darken($red-accent, 25%);
+
+        &:hover {
+          background-color: darken($red-accent, 50%);
+        }
+      }
+
+      p {
+        @include rem("padding", 0 12px);
+        color: $grey-1;
+        margin: 0;
+        @include ellipsis;
+        text-transform: none;
+      }
+    }
+  }
+
+  &Title {
+    @include typography;
+    font-weight: 400;
+    color: $brand-4;
+    text-transform: uppercase;
+    @include rem("margin", 20px 0);
+  }
+}

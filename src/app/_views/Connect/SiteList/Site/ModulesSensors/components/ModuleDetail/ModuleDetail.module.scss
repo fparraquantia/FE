@@ -1,0 +1,58 @@
+@import "src/_styles/settings";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  @include rem("padding", 40px 100px);
+  @include rem("width", 700px);
+  @include rem("height", 550px);
+  @include rem("gap", 20px);
+
+  .loading {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    @include rem("gap", 10);
+    svg {
+      color: $grey-3;
+    }
+
+    span {
+      @include h3-regular;
+      // @include rem("font-size", 14px);
+      color: $grey-3;
+      @include ellipsis;
+      text-transform: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  &Input {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    @include rem("gap", 30px);
+
+    & > span {
+      position: absolute;
+      right: 0;
+      @include rem("bottom", -30px);
+      @include rem("right", -20px);
+      @include rem("width", 180px);
+      @include h2-regular;
+      text-align: center;
+      color: $red-alert;
+    }
+  }
+}

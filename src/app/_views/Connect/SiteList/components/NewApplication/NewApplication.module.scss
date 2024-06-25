@@ -1,0 +1,87 @@
+@import "src/_styles/settings";
+
+.application {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  @include rem("width", 640px);
+  @include rem("padding-left", 30px);
+
+  &Products {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    @include rem("gap", 15px);
+    width: 100%;
+  }
+
+  &Scroll {
+    @include rem("height", 690px);
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &InputProducts {
+    width: calc(100% - 20px);
+    flex-direction: column;
+    display: flex;
+
+    &TitleProd {
+      margin-top: 58px;
+      height: 58px;
+      justify-content: flex-start;
+    }
+
+    &Row {
+      height: 58px;
+      display: flex;
+      gap: 20px;
+
+      &CSV {
+        display: flex;
+        width: 55px;
+        height: 100%;
+        justify-content: center;
+        align-items: center;
+
+        &Text {
+          margin: 0;
+          font-weight: 400;
+          font-size: 10px;
+          line-height: 11.5px;
+          letter-spacing: 0.4px;
+        }
+      }
+    }
+  }
+
+  &Add {
+    flex: 1;
+    @include rem("min-height", 200px);
+    @include rem("padding-bottom", 40px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  &AddSite {
+    @include rem("margin", 20px 0);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &Title {
+    @include typography;
+    font-weight: 400;
+    color: $brand-4;
+    text-transform: uppercase;
+    @include rem("margin", 20px 0);
+  }
+}

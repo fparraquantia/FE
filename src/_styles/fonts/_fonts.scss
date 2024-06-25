@@ -1,0 +1,173 @@
+// Variables de fuentes
+@import "../mixins/rem";
+$font-family-arial: "Arial", sans-serif;
+$font-family-roboto: "Roboto", sans-serif;
+
+@mixin h1-regular {
+  font-family: $font-family-arial;
+  @include rem("font-size", 9px);
+  font-weight: 400;
+  @include rem("line-height", 10.35px);
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin h1-bold {
+  font-family: $font-family-arial;
+  @include rem("font-size", 9px);
+  font-weight: 700;
+  @include rem("line-height", 10.35px);
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin h2-regular {
+  font-family: $font-family-arial;
+  @include rem("font-size", 12px);
+  font-weight: 400;
+  @include rem("line-height", 13.8px);
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin h2-bold {
+  font-family: $font-family-arial;
+  @include rem("font-size", 12px);
+  font-weight: 700;
+  @include rem("line-height", 13.8px);
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin h3-regular {
+  font-family: $font-family-arial;
+  @include rem("font-size", 16px);
+  font-weight: 400;
+  @include rem("line-height", 18.39px);
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin h3-bold {
+  font-family: $font-family-arial;
+  @include rem("font-size", 16px);
+  font-weight: 700;
+  @include rem("line-height", 18.39px);
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin h4-regular {
+  font-family: $font-family-arial;
+  @include rem("font-size", 21px);
+  font-weight: 400;
+  @include rem("line-height", 24.52px);
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin h4-bold {
+  font-family: $font-family-arial;
+  @include rem("font-size", 21px);
+  font-weight: 700;
+  @include rem("line-height", 24.52px);
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin h5-regular {
+  font-family: $font-family-arial;
+  @include rem("font-size", 28px);
+  font-weight: 400;
+  @include rem("line-height", 32.68px);
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin h5-bold {
+  font-family: $font-family-arial;
+  @include rem("font-size", 28px);
+  font-weight: 700;
+  @include rem("line-height", 32.68px);
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin h6-regular {
+  font-family: $font-family-arial;
+  @include rem("font-size", 38px);
+  font-weight: 400;
+  @include rem("line-height", 43.57px);
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin h6-bold {
+  font-family: $font-family-arial;
+  @include rem("font-size", 38px);
+  font-weight: 700;
+  @include rem("line-height", 43.57px);
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin typography {
+  font-family: $font-family-arial;
+  @include rem("font-size", 19px);
+  font-weight: 700;
+  @include rem("line-height", 21.85px);
+  letter-spacing: 0em;
+  text-align: left;
+  margin: 0;
+  padding: 0;
+}
+
+@mixin ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+@mixin boxShadow {
+  box-shadow: 0px 4px 32px 0px #0000001a;
+}
+
+@mixin card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: $grey-1;
+  @include boxShadow;
+  @include rem("border-radius", 8px);
+  @include rem("padding", 20px);
+}
+
+@mixin cardRow {
+  @include card;
+  flex-direction: row;
+}

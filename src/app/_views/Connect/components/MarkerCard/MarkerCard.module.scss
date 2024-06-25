@@ -1,0 +1,85 @@
+@import "src/_styles/settings";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  @include rem("height", 150px);
+  @include rem("min-width", 390px);
+  @include rem("padding", 0 15px);
+
+  &Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+
+    &Content {
+      display: flex;
+      flex-direction: row;
+      @include rem("gap", 10px);
+
+      p {
+        @include typography;
+      }
+
+      &Dot {
+        @include rem("height", 15px);
+        @include rem("min-width", 15px);
+        @include rem("border-radius", 15px);
+        background-color: $red-alert;
+      }
+    }
+  }
+
+  &Tipology {
+    @include h4-regular;
+    @include rem("font-size", 18px);
+    color: $grey-5;
+    width: 100%;
+    @include rem("padding", 5px 0);
+  }
+
+  &Footer {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &Content {
+      display: flex;
+      @include rem("gap", 5px);
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+
+      &Row {
+        display: flex;
+        @include rem("gap", 5px);
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+
+        p {
+          @include h3-bold;
+          color: $grey-5;
+          text-transform: none;
+          @include ellipsis;
+          @include rem("width", 70px);
+        }
+        span {
+          @include h3-regular;
+          color: $grey-4;
+          @include rem("max-width", 200px);
+
+          text-transform: none;
+          @include ellipsis;
+        }
+      }
+    }
+  }
+}

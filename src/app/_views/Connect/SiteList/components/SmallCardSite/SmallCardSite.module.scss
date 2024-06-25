@@ -1,0 +1,114 @@
+@import "src/_styles/settings";
+
+.containerCard {
+  flex: 1;
+  @include card;
+  width: 100%;
+  height: 100%;
+
+  &Header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    @include rem("height", 40px);
+
+    &Title {
+      @include rem("max-width", 440px);
+      @include rem("min-width", 250px);
+      @include rem("gap", 5px);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      p {
+        @include h5-regular;
+        color: $grey-6;
+        white-space: nowrap;
+        overflow: scroll;
+        text-overflow: ellipsis;
+      }
+
+      &Dot {
+        @include rem("height", 15px);
+        @include rem("min-width", 15px);
+        @include rem("border-radius", 15px);
+        background-color: $red-alert;
+      }
+    }
+
+    &Buttons {
+      display: flex;
+      flex: 1;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      @include rem("gap", 5px);
+      @include rem("padding", 10px 0px);
+    }
+  }
+
+  &Content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    &Data {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      @include rem("gap", 10px);
+      flex-wrap: wrap;
+      @include rem("margin-right", 20px);
+
+      &Column {
+        display: flex;
+        flex: 4;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        @include rem("gap", 10px);
+
+        &Row {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+
+          p {
+            height: 100%;
+            @include rem("max-width", 115px);
+            @include h2-bold;
+            color: $grey-5;
+            flex: 1;
+            overflow-wrap: break-word;
+            min-width: 0;
+          }
+
+          span {
+            height: 100%;
+            width: 100%;
+            @include h2-regular;
+            color: $grey-5;
+            flex: 1;
+            overflow-wrap: break-word;
+            min-width: 0;
+          }
+        }
+      }
+    }
+  }
+  &Image {
+    @include rem("max-width", 500px);
+    @include rem("min-width", 80px);
+    @include rem("border-radius", 8px);
+    height: 100%;
+    object-fit: cover;
+  }
+}

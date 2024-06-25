@@ -1,0 +1,36 @@
+/*
+============================================================================
+                rem konverter
+============================================================================
+*/
+
+@use "sass:math";
+$baseline_px: 16;
+
+@mixin rem($property, $px_values) {
+  // If only one (numeric) value, return the property/value line for it.
+  @if type-of($px_values) == "number" {
+    $px_values: math.div($px_values, ($px_values * 0 + 1));
+    #{$property}: math.div($px_values, $baseline_px) + rem;
+  }
+  // If more than one value, create list & perform equations on each value
+  @else {
+    // Create an empty list that we can dump values into
+    $rem_values: ();
+    @each $value in $px_values {
+      // Convert value to string for checking
+      $value_str: if(type-of($value) == "string", $value, inspect($value));
+      // If the value is zero, auto, or contains "fr", keep it as is
+      @if $value == 0 or $value == auto or str-index($value_str, "fr") {
+        $rem_values: append($rem_values, $value);
+      }
+      // If the value is not zero, convert it from px to rem
+      @else {
+        $value: math.div($value, ($value * 0 + 1));
+        $rem_values: append($rem_values, math.div($value, $baseline_px) + rem);
+      }
+    }
+    // Return the property and its list of converted values
+    #{$property}: $rem_values;
+  }
+}

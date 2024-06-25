@@ -1,0 +1,40 @@
+@import "src/_styles/settings";
+
+.container {
+  display: flex;
+  align-items: center;
+  flex: 1;
+
+  &Children {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+
+  &Label {
+    display: flex;
+    @include rem("width", 170);
+    @include rem("height", 35px);
+    align-items: center;
+
+    p {
+      @include typography;
+      font-weight: 400;
+      text-transform: none;
+      color: $grey-4;
+      @include ellipsis;
+    }
+
+    &Left {
+      justify-content: flex-start;
+    }
+
+    &Center {
+      justify-content: center;
+    }
+
+    &Right {
+      justify-content: flex-end;
+    }
+  }
+}

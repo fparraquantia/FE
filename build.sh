@@ -1,1 +1,0 @@
-docker compose up --always-recreate-deps --build --force-recreate --pull "always" --remove-orphans -V -d

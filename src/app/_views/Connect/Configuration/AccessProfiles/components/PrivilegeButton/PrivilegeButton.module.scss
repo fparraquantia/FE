@@ -1,0 +1,114 @@
+@import "src/_styles/settings";
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  @include rem("gap", 32px);
+  @include rem("padding", 0 20px);
+  @include rem("margin-bottom", 50px);
+  flex-wrap: wrap;
+
+  &Disabled {
+    opacity: 0.4;
+  }
+
+  &Parent {
+    @include rem("height", 50px);
+    width: calc((20%) - (1rem));
+
+    &Row {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      @include rem("height", 50px);
+      @include rem("gap", 15px);
+      @include rem("padding", 0 20px);
+
+      &Data {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+        height: 100%;
+        @include rem("gap", 5px);
+
+        p {
+          @include h3-bold;
+          @include rem("font-size", 14px);
+          @include ellipsis;
+          text-transform: none;
+        }
+      }
+    }
+  }
+
+  &Wrapper {
+    display: flex;
+    flex-direction: row;
+    @include rem("gap", 16px);
+    width: calc((80%) - (1rem));
+    justify-content: flex-start;
+    flex-wrap: wrap;
+
+    &Feature {
+      transition:
+        border-color 0.3s,
+        background 0.3s;
+      @include rem("height", 50px);
+      @include rem("border-width", 2px);
+      @include rem("border-radius", 4px);
+      @include rem("gap", 10px);
+      @include rem("padding", 10px);
+      border-color: $brand-1;
+      border-style: solid;
+      width: calc((100% / 3) - (2rem / 3));
+      background: $brand-1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      p {
+        @include h3-regular;
+        color: $grey-5;
+        @include ellipsis;
+        @include rem("font-size", 14px);
+        font-weight: 600;
+      }
+
+      &Selected {
+        background: $brand-2;
+      }
+
+      &SelectedEdit {
+        background: $brand-2;
+        border-color: $red-accent;
+
+        :global(.ant-switch) {
+          background-color: $red-accent;
+        }
+        :global(.ant-switch.ant-switch-checked:hover:not(.ant-switch-disabled)) {
+          background-color: lighten($red-accent, 10%);
+        }
+
+        p {
+          color: $grey-6;
+          font-weight: 700;
+        }
+      }
+
+      &Buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+        align-items: center;
+        @include rem("gap", 10px);
+        @include rem("padding", 10px 0px);
+      }
+    }
+  }
+}

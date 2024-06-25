@@ -1,0 +1,247 @@
+@import "src/_styles/settings";
+
+.container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  @include rem("gap", 30px);
+
+  .loading {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    @include rem("gap", 10);
+    svg {
+      color: $grey-3;
+    }
+
+    span {
+      @include h3-regular;
+      // @include rem("font-size", 14px);
+      color: $grey-3;
+      @include ellipsis;
+      text-transform: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+  }
+
+  .dot {
+    @include rem("height", 15px);
+    @include rem("min-width", 15px);
+    @include rem("border-radius", 15px);
+    background-color: $brand-4;
+  }
+
+  .header {
+    @include rem("padding", 0 20px);
+    @include rem("height", 45px);
+    width: 100%;
+
+    &Wrapper {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      @include rem("border-bottom-width", 1px);
+      border-bottom-color: $grey-2;
+      border-bottom-style: solid;
+
+      &Title {
+        @include rem("max-width", 440px);
+        @include rem("min-width", 250px);
+        @include rem("gap", 15px);
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        p {
+          @include typography;
+          text-transform: uppercase;
+          color: $grey-5;
+          @include ellipsis;
+        }
+      }
+    }
+  }
+
+  .content {
+    flex: 1;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+
+    &Row {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      width: 100%;
+      @include rem("height", 80px);
+      @include rem("gap", 15px);
+      @include rem("padding", 0 20px);
+
+      &Image {
+        @include rem("height", 40px);
+        @include rem("width", 40px);
+        color: $grey-3;
+      }
+
+      &Data {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        @include rem("gap", 5px);
+
+        span {
+          @include h3-regular;
+          @include rem("font-size", 14px);
+          color: $grey-3;
+          @include ellipsis;
+          text-transform: none;
+        }
+
+        p {
+          @include h3-bold;
+          @include rem("font-size", 14px);
+          color: $grey-6;
+          @include ellipsis;
+          text-transform: none;
+        }
+      }
+
+      &Selected {
+        background-color: $brand-2;
+        &:hover {
+          background-color: darken($brand-2, 5%);
+        }
+      }
+
+      &Detail {
+        background-color: $brand-4;
+        &:hover {
+          background-color: darken($brand-4, 5%);
+        }
+      }
+
+      &Selected,
+      &Detail {
+        img {
+          filter: brightness(0) invert(1);
+        }
+
+        p,
+        span {
+          color: $grey-1;
+          opacity: 0.65;
+        }
+      }
+
+      &.asset {
+        justify-content: space-between;
+
+        .contentRowImage {
+          flex: 1;
+          height: 100%;
+          @include rem("min-width", 70px);
+          @include rem("max-width", 140px);
+          object-fit: contain;
+          background-color: $grey-1;
+          @include rem("margin-right", -20px);
+          @include rem("padding", 0 20px);
+          filter: none;
+        }
+
+        .contentRowData {
+          width: auto;
+          flex: 1;
+        }
+      }
+    }
+
+    &Details {
+      @include rem("padding", 20px);
+      @include rem("gap", 20px);
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      &Data {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        @include rem("gap", 20px);
+
+        span {
+          @include h3-regular;
+          // @include rem("font-size", 14px);
+          color: $grey-3;
+          @include ellipsis;
+          text-transform: none;
+          display: flex;
+          justify-content: flex-end;
+          height: 100%;
+          align-items: center;
+          flex: 1;
+        }
+
+        p {
+          @include h3-bold;
+          @include rem("font-size", 14px);
+          color: $grey-6;
+          @include ellipsis;
+          text-transform: none;
+          display: flex;
+          justify-content: flex-end;
+          height: 100%;
+          align-items: center;
+          flex: 1;
+        }
+      }
+    }
+  }
+
+  &Card {
+    flex: 1;
+    @include card;
+    @include rem("padding", 20px 0);
+    width: 100%;
+    height: 100%;
+  }
+
+  &Column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    @include rem("gap", 15px);
+
+    &CardMid {
+      @include card;
+      @include rem("padding", 20px 0);
+      flex: 1;
+      width: 100%;
+      min-height: 0px;
+    }
+  }
+}
