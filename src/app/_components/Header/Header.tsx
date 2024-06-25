@@ -95,34 +95,8 @@ export function Header() {
           >
             <span>{RouteTitle[RoutesUrl.configuration]}</span>
           </Button>
-          <Button
-            sx={{ width: 100, gap: 0.2 }}
-            startIcon={<AssessmentOutlined />}
-            variant="text"
-            href={RoutesUrl.reports}
-            className={
-              pathname.startsWith(RoutesUrl.reports)
-                ? styles.containerLeftRoutesActive
-                : ""
-            }
-            component={Link}
-          >
-            <span>{RouteTitle[RoutesUrl.reports]}</span>
-          </Button>
-          <Button
-            sx={{ width: 100, gap: 0.2 }}
-            startIcon={<NotificationsNoneOutlined />}
-            variant="text"
-            href={RoutesUrl.alerts}
-            className={
-              pathname.startsWith(RoutesUrl.alerts)
-                ? styles.containerLeftRoutesActive
-                : ""
-            }
-            component={Link}
-          >
-            <span>{RouteTitle[RoutesUrl.alerts]}</span>
-          </Button>
+
+
         </div>
       </div>
       <div className={styles.containerRight}>

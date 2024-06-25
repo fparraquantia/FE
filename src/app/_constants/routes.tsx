@@ -15,13 +15,10 @@ export enum RoutesUrl {
 
 export enum RoutesSiteUrl {
   overview = "/",
-  multiSiteOV = "/multi-site-ov",
   actionPlan = "/action-plan",
   modulesSensors = "/modules-sensors",
-  synoptic = "/synoptic",
   manualEntry = "/manual-entry",
   dataVisualisation = "/data-visualisation",
-  myShares = "/my-shares",
 }
 
 export enum RoutesConfigUrl {
@@ -115,22 +112,9 @@ export const getRoutesSiteData = (siteId: number): RoutesSiteDataType => {
       icon: <FiEdit />,
     },
    
-    [RoutesSiteUrl.myShares]: {
-      type: RoutesSiteUrl.myShares,
-      title: "My Shares",
-      href: `${baseUrl}${RoutesSiteUrl.myShares}`,
-      icon: <FiBookmark />,
-    },
-    [RoutesSiteUrl.multiSiteOV]: {
-      type: RoutesSiteUrl.multiSiteOV,
-      title: "Multi-site Overview",
-      href: `${baseUrl}${RoutesSiteUrl.multiSiteOV}`,
-    },
-    [RoutesSiteUrl.synoptic]: {
-      type: RoutesSiteUrl.synoptic,
-      title: "Synoptic",
-      href: `${baseUrl}${RoutesSiteUrl.synoptic}`,
-    },
+
+
+
   };
 };
 

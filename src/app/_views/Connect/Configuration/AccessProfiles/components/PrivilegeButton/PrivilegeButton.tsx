@@ -24,7 +24,6 @@ enum RoleCategory {
   Map = "Map",
   Alerts = "Alerts",
   MySites = "My Sites",
-  Reports = "Reports",
   Settings = "Settings",
 }
 
@@ -119,14 +118,7 @@ export default function PrivilegeButton({ selectedProfile, setSave, setRoleIds }
         { title: "TV Display", value: RoleEnum.TVDISPLAY },
       ],
     },
-    {
-      title: RoleCategory.Reports,
-      icon: <AssessmentOutlined />,
-      privileges: [
-        { title: "Reports", value: RoleEnum.REPORTS },
-        { title: "Multisite Reports", value: RoleEnum.REPORTSMULTI },
-      ],
-    },
+
     {
       title: RoleCategory.Settings,
       icon: <SettingsOutlined />,
