@@ -5,14 +5,13 @@ import { Button, Menu } from "@mui/material";
 import GoogleMapReact from "google-map-react";
 import { useSession } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState, Suspense } from "react";
 
 
 import styles from "./MapView.module.scss";
 import { MapSidePanel } from "./components/MapSidePanel/MapSidePanel";
 import { MarkerCard } from "./components/MarkerCard/MarkerCard";
 
-const searchParams = useSearchParams();
 const NEXT_PUBLIC_GOOGLE_API_KEY = 'AIzaSyD2zoDnIjXXET20PLPMwbNSjZHNatZKg2A'
 const Marker = ({
   id,
@@ -74,7 +73,7 @@ const Marker = ({
 export const MapView = () => {
   const [loadedMap, setIsLoaded] = useState(false);
   const [searchSite, setSearchSite] = useState("");
-  const sitesIdsFromParams = searchParams.get("sites-ids");
+
 
   const { data: session } = useSession();
   console.log(session);
@@ -191,16 +190,13 @@ export const MapView = () => {
   ];
 
   const filteredSites = useMemo(() => {
-    const sitesIdsFromParamsArray = sitesIdsFromParams?.split(",");
     return sitesList.filter((site) => {
-      const idsCoincidence = !sitesIdsFromParams || sitesIdsFromParamsArray?.includes(site.id.toString());
 
-      const searchCoincidence = normalizeText(site?.name || "").includes(normalizeText(searchSite));
-      return idsCoincidence && searchCoincidence;
     });
-  }, [sitesIdsFromParams, sitesList, searchSite]);
+  }, [sitesList, searchSite]);
 
   return (
+    <Suspense fallback={<div>Loading...</div>}>
     <div className={styles.container}>
       <MapSidePanel
         searchSite={searchSite}
@@ -217,7 +213,7 @@ export const MapView = () => {
           setIsLoaded(true);
         }}>
         {loadedMap &&
-          filteredSites.map(
+          sitesList.map(
             (site) =>
               site.coordinates?.latitude &&
               site.coordinates.longitude &&
@@ -235,5 +231,6 @@ export const MapView = () => {
           )}
       </GoogleMapReact>
     </div>
+    </Suspense>
   );
 };
