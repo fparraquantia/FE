@@ -12,6 +12,7 @@ import styles from "./MapView.module.scss";
 import { MapSidePanel } from "./components/MapSidePanel/MapSidePanel";
 import { MarkerCard } from "./components/MarkerCard/MarkerCard";
 
+const searchParams = useSearchParams();
 const NEXT_PUBLIC_GOOGLE_API_KEY = 'AIzaSyD2zoDnIjXXET20PLPMwbNSjZHNatZKg2A'
 const Marker = ({
   id,
@@ -73,7 +74,6 @@ const Marker = ({
 export const MapView = () => {
   const [loadedMap, setIsLoaded] = useState(false);
   const [searchSite, setSearchSite] = useState("");
-  const searchParams = useSearchParams();
   const sitesIdsFromParams = searchParams.get("sites-ids");
 
   const { data: session } = useSession();
