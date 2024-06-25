@@ -51,7 +51,7 @@ export function SiteOverview() {
       src="https://app.powerbi.com/reportEmbed?reportId=56486d7f-458b-4950-9f08-8cf610b9c37f&autoAuth=true&ctid=caec34b8-bf95-4894-afcf-1364d9f54752"
    
       allowFullScreen={true}
-      class="responsive-iframe"
+      className={"responsive-iframe"}
       style={{width: '100%', height: '100%'}}></iframe>
       </div>
     </div>

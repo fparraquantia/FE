@@ -49,8 +49,8 @@ export function CardUser({ idUser }: CardUserProps) {
   const currentUser = useMemo(() => users?.find((el) => el.id == idUser), [idUser, users]);
 
   useEffect(() => {
-    const userSitesIds: `siteid-${number}`[] = userSites?.map((siteId) => `siteid-${siteId}` as const) || [];
-    setIdsTreeSites(userSitesIds);
+    // const userSitesIds: `siteid-${number}`[] = userSites?.map((siteId) => `siteid-${siteId}` as const) || [];
+    // setIdsTreeSites(userSitesIds);
   }, [userSites, isEditingMode]);
 
   useEffect(() => {
