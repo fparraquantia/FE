@@ -22,41 +22,39 @@ const mockedSites: TSite[] = [
     postalCode: null,
     coordinates: null,
     address: null,
-    image_url: gamboa, 
+    image_url: gamboa.src, 
   },
   {
     id: 2, name: 'Planta Desaladora Mina Spence', country: { name: 'Spain' }, contactName: 'Álvaro Díaz', customerName: 'Tedagua',
     postalCode: null,
     coordinates: null,
     address: null,
-    image_url: espence, 
+    image_url: espence.src, 
   },{
     id: 3, name: 'Planta Desaladora de Beni Saf ', country: { name: 'Portugal' },contactName: 'Álvaro Díaz', customerName: 'Tedagua',
     postalCode: null,
     coordinates: null,
     address: null,
-    image_url: benisaf, 
+    image_url: benisaf.src,  
   },{
     id: 4, name: 'Planta Desaladora de Escombreras', country: { name: 'Peru' },contactName: 'Álvaro Díaz', customerName: 'Tedagua',
     postalCode: null,
     coordinates: null,
     address: null,
-    image_url: pescombreras, 
+    image_url: pescombreras.src,  
   },{
     id: 5, name: 'Planta Desaladora de Duqm', country: { name: 'Chile' }, contactName: 'Álvaro Díaz', customerName: 'Tedagua',
     postalCode: null,
     coordinates: null,
     address: null,
-    image_url: pduqm, 
+    image_url: pduqm.src, 
   },{
     id: 6, name: 'Planta Desaladora de Tuas III', country: { name: 'Spain' },contactName: 'Álvaro Díaz', customerName: 'Tedagua',
     postalCode: null,
     coordinates: null,
     address: null,
-    image_url: ptuas, 
+    image_url: ptuas.src, 
   },
-  
-
 ];
 
 interface CardSitesProps {

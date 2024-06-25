@@ -5,7 +5,7 @@ import Image from "next/image";
 import { IconButton } from "@mui/material";
 import { ModeEditOutlineOutlined, MoreVert } from "@mui/icons-material";
 
-const mockSites = {
+const mockSites: { [key: number]: any } = {
  1: {
     id: 1,
     name: "Planta Potabilizadora de Gamboa",
