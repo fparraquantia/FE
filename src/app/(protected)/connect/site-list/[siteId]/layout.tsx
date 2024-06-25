@@ -36,7 +36,7 @@ export default function PrivateLayout({ params, children }: { params: { siteId: 
   const breadcrumbs: CustomBreadcrumbType[] = useMemo(
     () => [
       { href: RoutesUrl.siteList, text: "My Sites" },
-      ...(currentUrlData.type != RoutesSiteUrl.multiSiteOV
+      ...(currentUrlData.type != RoutesSiteUrl.manualEntry
         ? [
             {
               href: getRoutesSiteData(siteId)[RoutesSiteUrl.overview].href,
@@ -53,7 +53,7 @@ export default function PrivateLayout({ params, children }: { params: { siteId: 
   );
 
   const ElementNav = useMemo(() => {
-    if (getUrlDataFromPath(params.siteId, pathname).type == RoutesSiteUrl.multiSiteOV) {
+    if (getUrlDataFromPath(params.siteId, pathname).type == RoutesSiteUrl.manualEntry) {
       return <TreeSites type="double" />;
     }
 
